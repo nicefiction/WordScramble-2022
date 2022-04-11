@@ -1,17 +1,26 @@
-//
-//  ContentView.swift
-//  WordScramble
-//
-//  Created by Olivier Van hamme on 11/04/2022.
-//
+/// SOURCE:
+///
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    
+    // MARK: - PROPERTY WRAPPERS
+    // MARK: - PROPERTIES
+    // MARK: - INITIALIZERS
+    // MARK: - COMPUTED PROPERTIES
     var body: some View {
+        
         Text("Hello, world!")
             .padding()
     }
+    
+    
+    
+    // MARK: - METHODS
+    // MARK: - HELPER METHODS
 }
 
 struct ContentView_Previews: PreviewProvider {
