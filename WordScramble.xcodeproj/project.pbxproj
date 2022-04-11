@@ -23,6 +23,7 @@
 		C504A3AC280498B400A338F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C504A3B42804996700A338F5 /* IntroducingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducingList.swift; sourceTree = "<group>"; };
 		C504A3B62804A98A00A338F5 /* LoadingResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingResources.swift; sourceTree = "<group>"; };
+		C504A3B82804AF1700A338F5 /* WorkingWithStrings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WorkingWithStrings.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 			children = (
 				C504A3B42804996700A338F5 /* IntroducingList.swift */,
 				C504A3B62804A98A00A338F5 /* LoadingResources.swift */,
+				C504A3B82804AF1700A338F5 /* WorkingWithStrings.playground */,
 			);
 			path = "Day 29";
 			sourceTree = "<group>";
