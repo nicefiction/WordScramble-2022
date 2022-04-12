@@ -13,6 +13,9 @@ struct ContentView: View {
     @State private var newWord: String = ""
     @State private var rootWord: String = ""
     @State private var usedWords = Array<String>()
+    @State private var alertTitle: String = ""
+    @State private var alertMessage: String = ""
+    @State private var isShowingAlert: Bool = false
     
     
     
@@ -42,6 +45,12 @@ struct ContentView: View {
             }
             .navigationTitle(Text(rootWord))
             .onAppear(perform: startGame)
+            .alert(alertTitle,
+                   isPresented: $isShowingAlert) {
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text(alertMessage)
+            }
         }
     }
     
@@ -59,6 +68,29 @@ struct ContentView: View {
         else {return }
         
         // extra validation to come...
+        guard checkOriginality(of: createdWord)
+        else {
+            alertTitle = "Looks familiar."
+            alertMessage = "Your word has been created already."
+            isShowingAlert.toggle()
+            return
+        }
+        
+        guard checkValidity(of: createdWord)
+        else {
+            alertTitle = "Looks weird."
+            alertMessage = "Please enter a valid word."
+            isShowingAlert.toggle()
+            return
+        }
+        
+        guard checkLegitimacy(of: createdWord)
+        else {
+            alertTitle = "Looks a bit off."
+            alertMessage = "Please enter a legitimate word."
+            isShowingAlert.toggle()
+            return
+        }
         
         withAnimation {
             usedWords.insert(createdWord, at: 0)
@@ -88,12 +120,73 @@ struct ContentView: View {
     }
     
     
+    func checkOriginality(of word: String)
+    -> Bool {
+        
+        return !usedWords.contains(word)
+    }
+    
+    
+    func checkValidity(of word: String)
+    -> Bool {
+        
+        let uiTextChecker = UITextChecker.init()
+        let nsRange = NSRange(location: 0, length: word.utf16.count)
+        let rangeOfMisspelledWords = uiTextChecker.rangeOfMisspelledWord(in: word,
+                                                                         range: nsRange,
+                                                                         startingAt: 0,
+                                                                         wrap: false,
+                                                                         language: "en")
+        
+        return rangeOfMisspelledWords.location == NSNotFound
+    }
+    /*
+     func isPossible(word: String) -> Bool {
+         var tempWord = rootWord
 
+         for letter in word {
+             if let pos = tempWord.firstIndex(of: letter) {
+                 tempWord.remove(at: pos)
+             } else {
+                 return false
+             }
+         }
+
+         return true
+     }
+     */
+    
+    func checkLegitimacy(of word: String)
+    -> Bool {
+        
+        var temporaryWord = rootWord
+        
+        for eachLetter in word {
+            if let _eachLetter = temporaryWord.firstIndex(of: eachLetter) {
+                temporaryWord.remove(at: _eachLetter)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+
+    
     // MARK: - HELPER METHODS
 }
 
+
+
+
+
+
+// MARK: - PREVIEWS
+
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         ContentView()
     }
 }
