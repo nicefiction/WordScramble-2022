@@ -65,3 +65,5 @@ let rangeOfMispelledWords = uiTextChecker.rangeOfMisspelledWord(in: wordToCheck,
 /// so instead relied on special values to represent missing data.
 
 let missingDataCheck = rangeOfMispelledWords.location == NSNotFound
+
+

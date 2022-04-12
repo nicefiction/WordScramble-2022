@@ -14,6 +14,7 @@ struct ChallengeView: View {
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
     @State private var isShowingAlert: Bool = false
+    @State private var gameScore: Int = 0
     
     
     
@@ -39,6 +40,14 @@ struct ChallengeView: View {
         NavigationView {
             List {
                 Section {
+                    HStack {
+                        Text("Score")
+                            .font(.subheadline)
+                            .textCase(.uppercase)
+                        Spacer()
+                        Text("\(gameScore)")
+                            .font(.headline)
+                    }
                     TextField("My word is...",
                               text: $createdWord)
                     .autocapitalization(.none)
@@ -105,6 +114,7 @@ struct ChallengeView: View {
             return
         }
         
+        gameScore += updateGameScore(with: newWord)
         createdWords.insert(newWord, at: 0)
         createdWord = ""
     }
@@ -171,6 +181,13 @@ struct ChallengeView: View {
     -> Void {
         
         loadListOfWords()
+    }
+    
+    
+    func updateGameScore(with word: String)
+    -> Int {
+        
+        return word.count
     }
     
     
