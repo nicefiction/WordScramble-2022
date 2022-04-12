@@ -1,5 +1,11 @@
-/// SOURCE;
+/// SOURCE:
 /// https://www.hackingwithswift.com/books/ios-swiftui/introducing-list-your-best-friend
+/// The job of `List` is
+/// to provide a scrolling table of data.
+/// In fact, it’s pretty much identical to `Form`,
+/// except it is used for presentation of data
+/// rather than requesting user input.
+/// `Form` is just a specialized type of `List`.
 
 import SwiftUI
 
