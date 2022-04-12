@@ -57,6 +57,9 @@ struct ChallengeView: View {
                 }
             }
             .navigationTitle(rootWord)
+            .toolbar {
+                Button("New Word", action: displayNewWord)
+            }
             .onAppear(perform: loadListOfWords)
             .alert(alertTitle,
                    isPresented: $isShowingAlert) {
@@ -161,6 +164,13 @@ struct ChallengeView: View {
             }
         }
         return true
+    }
+    
+    
+    func displayNewWord()
+    -> Void {
+        
+        loadListOfWords()
     }
     
     
