@@ -20,6 +20,20 @@ struct ChallengeView: View {
     // MARK: - PROPERTIES
     // MARK: - INITIALIZERS
     // MARK: - COMPUTED PROPERTIES
+    var customAlertMessage: String {
+        
+        if createdWords.contains(createdWord) {
+            alertMessage = "The word is already in your list."
+        } else if createdWord.count < 3 {
+            alertMessage = "The word is too short."
+        } else if createdWord == rootWord {
+            alertMessage = "You cannot use the challenge word."
+        }
+        
+        return alertMessage
+    }
+    
+    
     var body: some View {
         
         NavigationView {
@@ -67,7 +81,7 @@ struct ChallengeView: View {
         guard checkOriginality(of: newWord)
         else {
             alertTitle = "Not Original"
-            alertMessage = "The word is not orignal."
+            alertMessage = customAlertMessage
             isShowingAlert.toggle()
             return
         }
@@ -110,7 +124,11 @@ struct ChallengeView: View {
     func checkOriginality(of word: String)
     -> Bool {
         
-        return !createdWords.contains(word) && word.count > 3 && word != rootWord
+        let isNotInYourList = !createdWords.contains(word)
+        let isNotTooShort = word.count > 3
+        let isNotTheSame = word != rootWord
+        
+        return isNotInYourList && isNotTooShort && isNotTheSame
     }
     
     
