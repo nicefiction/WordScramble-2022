@@ -1,7 +1,9 @@
 /// SOURCE 1:
 /// https://www.hackingwithswift.com/books/ios-swiftui/adding-to-a-list-of-words
 /// SOURCE 2:
-///
+/// https://www.hackingwithswift.com/books/ios-swiftui/running-code-when-our-app-launches
+/// SOURCE 3:
+/// https://www.hackingwithswift.com/books/ios-swiftui/validating-words-with-uitextchecker
 
 import SwiftUI
 
@@ -140,21 +142,7 @@ struct ContentView: View {
         
         return rangeOfMisspelledWords.location == NSNotFound
     }
-    /*
-     func isPossible(word: String) -> Bool {
-         var tempWord = rootWord
-
-         for letter in word {
-             if let pos = tempWord.firstIndex(of: letter) {
-                 tempWord.remove(at: pos)
-             } else {
-                 return false
-             }
-         }
-
-         return true
-     }
-     */
+    
     
     func checkLegitimacy(of word: String)
     -> Bool {

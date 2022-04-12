@@ -14,6 +14,7 @@
 		C504A3B52804996700A338F5 /* IntroducingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504A3B42804996700A338F5 /* IntroducingList.swift */; };
 		C504A3B72804A98A00A338F5 /* LoadingResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504A3B62804A98A00A338F5 /* LoadingResources.swift */; };
 		C504A3BA28056E7F00A338F5 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = C504A3B928056E7F00A338F5 /* start.txt */; };
+		C504A3BC2805AB1700A338F5 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504A3BB2805AB1700A338F5 /* ChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C504A3B62804A98A00A338F5 /* LoadingResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingResources.swift; sourceTree = "<group>"; };
 		C504A3B82804AF1700A338F5 /* WorkingWithStrings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WorkingWithStrings.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C504A3B928056E7F00A338F5 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		C504A3BB2805AB1700A338F5 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				C504A3B32804993400A338F5 /* Day 29 */,
 				C504A3A5280498B200A338F5 /* WordScrambleApp.swift */,
 				C504A3A7280498B200A338F5 /* ContentView.swift */,
+				C504A3BB2805AB1700A338F5 /* ChallengeView.swift */,
 				C504A3B928056E7F00A338F5 /* start.txt */,
 				C504A3A9280498B400A338F5 /* Assets.xcassets */,
 				C504A3AB280498B400A338F5 /* Preview Content */,
@@ -160,6 +163,7 @@
 				C504A3A8280498B200A338F5 /* ContentView.swift in Sources */,
 				C504A3B52804996700A338F5 /* IntroducingList.swift in Sources */,
 				C504A3B72804A98A00A338F5 /* LoadingResources.swift in Sources */,
+				C504A3BC2805AB1700A338F5 /* ChallengeView.swift in Sources */,
 				C504A3A6280498B200A338F5 /* WordScrambleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
